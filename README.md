@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AAE5303 Assignment: Visual Odometry with ORB-SLAM3
 
 <div align="center">
@@ -539,3 +540,6 @@ Jan 2026
 
 </div>
 
+=======
+# AAE5303-ChatGPT_spokesperson-group-Project
+>>>>>>> 5e07beed644e3bff47f0d1f2cae8b88413faa851

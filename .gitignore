@@ -1,33 +1,56 @@
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
-.Python
+*.pyo
+*.pyd
 *.so
 
 # Virtual environments
+.venv/
+.venv_fig/
 venv/
-ENV/
+env/
 
-# IDE
-.idea/
+# VS Code / Cursor / IDE
 .vscode/
-*.swp
-*.swo
+.idea/
+*.code-workspace
 
-# OS
+# OS files
 .DS_Store
 Thumbs.db
 
-# Large files
-*.bag
-*.ply
+# Jupyter
+.ipynb_checkpoints/
 
-# Temporary files
-*.tmp
-*.temp
+# Logs
+*.log
 
-# Build artifacts
+# Temporary / editor files
+*.swp
+*.swo
+*~
+Untitled
+
+# Build / cache
 build/
-lib/
+dist/
+.cache/
+.pytest_cache/
+.mypy_cache/
 
+# Large intermediate outputs you usually don't want in repo
+output/
+tmp/
+temp/
+
+# Optional: ignore extracted raw images if repo becomes too large
+# data/extracted_images/images/
+
+# Optional: ignore raw bags if they are large and can be downloaded separately
+# data/raw_bags/
+
+# Keep evaluation json/png/zip and final_candidate tracked
+# so do NOT ignore:
+# data/evaluation_results_*/
+# final_candidate/
