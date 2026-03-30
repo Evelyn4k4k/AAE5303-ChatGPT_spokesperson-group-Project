@@ -11,46 +11,37 @@ __pycache__/
 venv/
 env/
 
-# VS Code / Cursor / IDE
+# IDE
 .vscode/
 .idea/
 *.code-workspace
 
-# OS files
+# OS / temp
 .DS_Store
 Thumbs.db
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Logs
-*.log
-
-# Temporary / editor files
 *.swp
 *.swo
 *~
 Untitled
 
-# Build / cache
-build/
-dist/
+# Windows ADS metadata
+*:Zone.Identifier
+
+# Logs / cache
+*.log
 .cache/
 .pytest_cache/
 .mypy_cache/
+.ipynb_checkpoints/
 
-# Large intermediate outputs you usually don't want in repo
+# Build
+build/
+dist/
+
+# Large intermediate outputs
 output/
 tmp/
 temp/
 
-# Optional: ignore extracted raw images if repo becomes too large
-# data/extracted_images/images/
-
-# Optional: ignore raw bags if they are large and can be downloaded separately
-# data/raw_bags/
-
-# Keep evaluation json/png/zip and final_candidate tracked
-# so do NOT ignore:
-# data/evaluation_results_*/
-# final_candidate/
+# Large raw/intermediate data
+data/

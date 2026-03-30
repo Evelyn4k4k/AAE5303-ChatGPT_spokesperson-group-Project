@@ -1,0 +1,64 @@
+%YAML:1.0
+
+# ------------------------------------------------
+# Camera Parameters for AMtown02
+# Using official AMtown calibration
+# Aggressive tuning version
+# ------------------------------------------------
+
+Camera.type: "PinHole"
+
+# Official AMtown intrinsics
+Camera.fx: 1453.72
+Camera.fy: 1453.28
+Camera.cx: 1172.18
+Camera.cy: 1041.78
+
+# Official AMtown distortion
+# [k1, k2, p1, p2, k3]
+Camera.k1: -0.1210
+Camera.k2: 0.1113
+Camera.p1: 0.0016
+Camera.p2: 0.00013
+Camera.k3: -0.062353
+
+# Image size
+Camera.width: 2448
+Camera.height: 2048
+
+# Frame rate
+Camera.fps: 10.0
+
+# Color order
+Camera.RGB: 0
+
+# ------------------------------------------------
+# ORB Parameters (aggressive)
+# ------------------------------------------------
+
+# More features for aerial scene robustness
+ORBextractor.nFeatures: 5000
+
+# Finer pyramid
+ORBextractor.scaleFactor: 1.15
+ORBextractor.nLevels: 10
+
+# Lower FAST thresholds to keep more weak features
+ORBextractor.iniThFAST: 8
+ORBextractor.minThFAST: 4
+
+# ------------------------------------------------
+# Viewer
+# ------------------------------------------------
+Viewer.UseViewer: 0
+
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1.0
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3.0
+Viewer.ViewpointX: 0.0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500.0

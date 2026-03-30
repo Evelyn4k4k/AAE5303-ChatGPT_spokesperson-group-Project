@@ -1,0 +1,65 @@
+%YAML:1.0
+
+# ------------------------------------------------
+# Camera Parameters for AMtown02 (tuned baseline)
+# NOTE:
+# - Intrinsics are temporarily kept from your current config.
+# - This is a TRACKING-TUNED version, not guaranteed official AMtown02 calibration.
+# - Main goal: improve ORB matching robustness on aerial images.
+# ------------------------------------------------
+
+Camera.type: "PinHole"
+
+# Camera intrinsics
+Camera.fx: 1444.43
+Camera.fy: 1444.34
+Camera.cx: 1179.50
+Camera.cy: 1044.90
+
+# Distortion
+Camera.k1: -0.0560
+Camera.k2: 0.1180
+Camera.p1: 0.00122
+Camera.p2: 0.00064
+Camera.k3: -0.0627
+
+# Image size
+Camera.width: 2448
+Camera.height: 2048
+
+# Frame rate
+Camera.fps: 10.0
+
+# Color order (0: BGR, 1: RGB)
+Camera.RGB: 0
+
+# ------------------------------------------------
+# ORB Parameters (tuned for AMtown02 aerial images)
+# ------------------------------------------------
+
+# More features than your old 1500
+ORBextractor.nFeatures: 3000
+
+# Keep stable baseline first
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+
+# Lower FAST threshold to catch more weak aerial features
+ORBextractor.iniThFAST: 12
+ORBextractor.minThFAST: 5
+
+# ------------------------------------------------
+# Viewer
+# ------------------------------------------------
+Viewer.UseViewer: 0
+
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1.0
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3.0
+Viewer.ViewpointX: 0.0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500.0
