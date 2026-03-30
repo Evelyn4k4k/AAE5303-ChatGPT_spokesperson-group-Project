@@ -1,11 +1,33 @@
-{
-  "group_name": "Team Alpha",
-  "project_private_repo_url": "https://github.com/yourusername/project.git",
-  "metrics": {
-    "ate_rmse_m": 0.0,
-    "rpe_trans_drift_m_per_m": 0.0,
-    "rpe_rot_drift_deg_per_100m": 0.0,
-    "completeness_pct": 0.0
-  }
-}
 
+{
+  "group_name": "AAE5303-ChatGPT_spokesperson-group-Project",
+  "project_private_repo_url": "https://github.com/Evelyn4k4k/AAE5303-ChatGPT_spokesperson-group-Project",
+  "module": "visual_odometry",
+  "sequence": "AMtown02",
+  "method": "ORB-SLAM3 monocular",
+  "owner": "Evelyn4k4k",
+  "team_members": {
+    "visual_odometry": "Evelyn4k4k",
+    "reconstruction": "wymmust",
+    "semantic_segmentation": "taiwanhaitong-crypto"
+  },
+  "final_result": {
+    "trajectory_file": "final_candidate/CameraTrajectory_best.txt",
+    "keyframe_trajectory_file": "final_candidate/KeyFrameTrajectory_best.txt",
+    "metrics_file": "final_candidate/metrics_best.json",
+    "figure_file": "final_candidate/figures/trajectory_evaluation_best.png"
+  },
+  "metrics": {
+    "ate_mean_m": 47.685467150166886,
+    "ate_rmse_m": 53.024393997361074,
+    "ate_std_m": 23.18798355738885,
+    "rpe_trans_drift_m_per_m": 2.0690741089448714,
+    "rpe_rot_drift_deg_per_100m": 67.13804694584911,
+    "completeness_pct": 98.78650486731564,
+    "matched_poses": 7408,
+    "gt_poses": 7499,
+    "delta_m": 10.0,
+    "t_max_diff_s": 0.1
+  },
+  "notes": "Monocular ORB-SLAM3 result on AMtown02 with synchronized ground truth and tuned camera configuration."
+}
