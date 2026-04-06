@@ -174,7 +174,6 @@ modules/vo/
 ├── final_candidate/
 │   ├── figures/
 │   │   ├── ate.zip
-│   │   ├── best_result_summary.png
 │   │   ├── metrics_comparison.png
 │   │   ├── sample_images.png
 │   │   └── trajectory_evaluation_best.png
@@ -211,9 +210,6 @@ modules/vo/
 
 ![Sample images](final_candidate/figures/sample_images.png)
 
-### Final result summary
-
-![Best result summary](final_candidate/figures/best_result_summary.png)
 
 ---
 
