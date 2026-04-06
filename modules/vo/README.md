@@ -1,132 +1,121 @@
 
-# Visual Odometry Module (ORB-SLAM3) — AAE5303 Group Project
+# Visual Odometry Module (ORB-SLAM3)
 
-This folder contains the **Visual Odometry (VO)** part of our AAE5303 group project for low-altitude aerial vehicle perception.
+This folder contains the **Visual Odometry (VO)** part of our AAE5303 group project.
 
-## Context
+---
 
-According to the course design, the final group project integrates three perception components:
+## 1. Task Overview
 
-- Visual Odometry
-- 3D scene reconstruction
-- Semantic segmentation
+This module focuses on **monocular ORB-SLAM3** on the **AMtown02** UAV sequence.
 
-Our group repo is organized accordingly, and this module focuses on the **VO / monocular ORB-SLAM3** part on the **AMtown02** sequence. :contentReference[oaicite:1]{index=1}
+The goal is to:
 
-## Team
+- run a reproducible monocular VO pipeline,
+- tune camera / ORB-related parameters,
+- export the estimated trajectory,
+- evaluate it against synchronized ground truth,
+- report the final result clearly.
 
-- **Evelyn4k4k** — Visual Odometry (this module)
+---
+
+## 2. Team Role
+
+- **Evelyn4k4k** — Visual Odometry
 - **wymmust** — 3D Reconstruction
 - **taiwanhaitong-crypto** — Semantic Segmentation
 
-## Objective
+---
 
-The goal of this module is to run and tune a monocular ORB-SLAM3 pipeline on a selected UAV sequence, export the estimated trajectory, align it with ground truth, evaluate it quantitatively, and summarize the result in a reproducible way.
+## 3. Dataset
 
-This aligns with the course focus on robust spatial perception for low-altitude aerial vehicles, where VO / VSLAM is one of the core technical components. 
+- **Sequence:** `AMtown02`
+- **Source family:** MARS-LVIG / UAVScenes
+- **Input modality:** monocular RGB images
+- **Final evaluation target:** synchronized full-frame `CameraTrajectory`
 
 ---
 
-## Dataset
+## 4. Method
 
-- **Sequence**: `AMtown02`
-- **Source family**: MARS-LVIG / UAVScenes course pipeline
-- **Input modality used in this module**: monocular RGB images
+We use **ORB-SLAM3** as the backend for monocular visual odometry.
 
-The teaching plan states that the course project is built around open-source multi-sensor UAV datasets, including MARS-LVIG for VSLAM and 3D reconstruction. :contentReference[oaicite:3]{index=3}
+### Pipeline
 
----
-
-## Method
-
-We use **ORB-SLAM3** as the visual SLAM / visual odometry backend.
-
-In the course material, Week 3 introduces the VO framework and its measurement-model-estimation view, while Week 4 focuses on ORB-SLAM3 and practical tuning ideas such as feature count, pyramid levels, and downsampling tricks. 
-
-### Main pipeline
-
-1. Extract images from the selected bag / sequence
-2. Extract and synchronize ground truth to image timestamps
-3. Run monocular ORB-SLAM3 with a tuned camera configuration
+1. Extract images from the selected sequence  
+2. Extract and synchronize ground truth to image timestamps  
+3. Run monocular ORB-SLAM3 with tuned camera settings  
 4. Export:
    - `CameraTrajectory.txt`
    - `KeyFrameTrajectory.txt`
-5. Evaluate the estimated trajectory against synchronized ground truth
-6. Generate result figures and summary metrics
+5. Evaluate the trajectory
+6. Generate final figures and summary metrics
 
 ---
 
-## Folder Structure
+## 5. Final Submitted Configuration
+
+The final selected setting is:
+
+- **Official AMtown calibration**
+- **Original image resolution**
+- **Medium ORB tuning**
+
+Final config file:
 
 ```text
-vo/
-├── README.md
-├── requirements.txt
-├── docs/
-│   ├── camera_config_amtown02_tuned.yaml
-│   ├── camera_config_amtown02_medium.yaml
-│   ├── camera_config_amtown02_medium_2x.yaml
-│   └── camera_config_amtown02_aggressive.yaml
-├── scripts/
-│   ├── data_prep/
-│   │   ├── extract_images_amtown02.py
-│   │   ├── extract_groundtruth_amtown02.py
-│   │   ├── sync_groundtruth_to_images.py
-│   │   └── downsample_images_2x.py
-│   ├── inspection/
-│   │   ├── inspect_bag.py
-│   │   ├── inspect_gt_topics.py
-│   │   └── inspect_selected_topics.py
-│   ├── evaluate_vo_accuracy.py
-│   └── generate_report_figures.py
-├── final_candidate/
-│   ├── CameraTrajectory_best.txt
-│   ├── KeyFrameTrajectory_best.txt
-│   ├── metrics_best.json
-│   └── figures/
-│       ├── trajectory_evaluation_best.png
-│       ├── metrics_comparison.png
-│       ├── sample_images.png
-│       └── best_result_summary.png
-└── leaderboard/
-    └── submission_template.json
+modules/vo/configs/camera_config_amtown02_medium.yaml
 ````
 
----
+This configuration was selected because it achieved the **best overall balance** among all tested settings.
 
-## Environment
+### Final Result
 
-Recommended environment follows the course setup style: GitHub + Cursor + Docker / WSL workflow. The Week 1 material explicitly frames the class around a reproducible GitHub-based workflow for group development.
-
-Typical local environment used in this project:
-
-* Ubuntu / WSL2
-* Python 3.10+
-* ORB-SLAM3 built locally
-* `evo` for trajectory evaluation
-* matplotlib / numpy for report figure generation
+* **ATE RMSE:** 52.988 m
+* **RPE Trans Drift:** 2.067 m/m
+* **RPE Rot Drift:** 67.079 deg/100m
+* **Completeness:** 98.79%
 
 ---
 
-## Reproducibility
+## 6. Experimental Comparison
 
-### 1. Prepare data
+| Version | Configuration                                                   | ATE RMSE (m) | RPE Trans Drift (m/m) | RPE Rot Drift (deg/100m) | Completeness (%) | Notes                                                               |
+| ------- | --------------------------------------------------------------- | -----------: | --------------------: | -----------------------: | ---------------: | ------------------------------------------------------------------- |
+| V1      | `KeyFrameTrajectory.txt` + original high-frequency GT           |       54.397 |                 2.316 |                   74.015 |             5.09 | Keyframe-only evaluation severely underestimated completeness.      |
+| V2      | `CameraTrajectory.txt` + synchronized GT + old HK-style config  |       53.946 |                 2.077 |               **67.043** |            98.68 | First valid full-frame evaluation after fixing GT synchronization.  |
+| V3      | Official **AMtown** calibration + medium tuning                 |   **52.988** |                 2.067 |                   67.079 |            98.79 | **Final selected result.** Best overall balance and lowest ATE.     |
+| V4      | Official **AMtown** calibration + aggressive tuning             |      118.237 |                 2.111 |                   92.059 |            98.76 | Aggressive feature tuning degraded global trajectory accuracy.      |
+| V5      | Official **AMtown** calibration + 2× downsample + medium tuning |      117.771 |             **1.899** |                   83.185 |        **98.93** | Slightly lower translational drift, but much worse global accuracy. |
 
-Extract images and ground truth:
+---
+
+## 7. Key Findings
+
+* **`CameraTrajectory.txt` is more suitable than `KeyFrameTrajectory.txt`** for final reporting because it provides full-frame trajectory coverage.
+* **Ground-truth synchronization is necessary**; otherwise completeness becomes misleading.
+* **Medium tuning produced the best overall result** on AMtown02.
+* **Aggressive tuning and 2× downsampling were not good final choices** for this sequence.
+
+---
+
+## 8. Reproducibility
+
+### Prepare data
 
 ```bash
-python3 scripts/data_prep/extract_images_amtown02.py
-python3 scripts/data_prep/extract_groundtruth_amtown02.py
-python3 scripts/data_prep/sync_groundtruth_to_images.py
+python3 modules/vo/scripts/data_prep/extract_images_amtown02.py
+python3 modules/vo/scripts/data_prep/extract_groundtruth_amtown02.py
+python3 modules/vo/scripts/data_prep/sync_groundtruth_to_images.py
 ```
 
 Optional downsampling experiment:
 
 ```bash
-python3 scripts/data_prep/downsample_images_2x.py
+python3 modules/vo/scripts/data_prep/downsample_images_2x.py
 ```
 
-### 2. Run ORB-SLAM3
+### Run ORB-SLAM3
 
 Example command:
 
@@ -134,128 +123,91 @@ Example command:
 cd ~/projects/ORB_SLAM3
 ./Examples/Monocular/mono_tum \
   Vocabulary/ORBvoc.txt \
-  /path/to/vo/docs/camera_config_amtown02_tuned.yaml \
-  /path/to/vo/data/extracted_images
+  /path/to/modules/vo/configs/camera_config_amtown02_medium.yaml \
+  /path/to/extracted_images
 ```
 
-### 3. Copy final trajectories
+### Save final trajectories
 
-After the run finishes, save / archive:
+Archive the final outputs as:
 
-* `CameraTrajectory.txt` → `final_candidate/CameraTrajectory_best.txt`
-* `KeyFrameTrajectory.txt` → `final_candidate/KeyFrameTrajectory_best.txt`
+* `CameraTrajectory.txt` → `modules/vo/final_candidate/CameraTrajectory_best.txt`
+* `KeyFrameTrajectory.txt` → `modules/vo/final_candidate/KeyFrameTrajectory_best.txt`
 
-### 4. Evaluate trajectory
+### Evaluate trajectory
+
+Example:
 
 ```bash
-python3 scripts/evaluate_vo_accuracy.py \
+python3 modules/vo/scripts/evaluation/evaluate_vo_accuracy.py \
   --groundtruth data/ground_truth/ground_truth_synced.txt \
-  --estimated final_candidate/CameraTrajectory_best.txt \
+  --estimated modules/vo/final_candidate/CameraTrajectory_best.txt \
   --t-max-diff 0.1 \
   --delta-m 10 \
-  --workdir final_candidate/figures_eval \
-  --json-out final_candidate/metrics_best.json
+  --workdir modules/vo/final_candidate/figures \
+  --json-out modules/vo/final_candidate/metrics_best.json
 ```
 
-### 5. Generate report figure
+### Final report files
 
-```bash
-python3 scripts/generate_report_figures.py \
-  --gt data/ground_truth/ground_truth_synced.txt \
-  --est final_candidate/CameraTrajectory_best.txt \
-  --evo-ape-zip final_candidate/figures/ate.zip \
-  --out final_candidate/figures/trajectory_evaluation_best.png \
-  --t-max-diff 0.1 \
-  --title-suffix "AMtown02 Final Candidate"
-```
-
----
-
-## Final Result
-
-### Best selected monocular VO result on AMtown02
-
-* **ATE RMSE (m):** 53.024393997361074
-* **ATE Mean (m):** 47.685467150166886
-* **ATE Std (m):** 23.18798355738885
-* **RPE Trans Drift (m/m):** 2.0690741089448714
-* **RPE Rot Drift (deg/100m):** 67.13804694584911
-* **Completeness (%):** 98.78650486731564
-* **Matched poses:** 7408 / 7499
-
-These values are stored in:
+The final selected result is summarized in:
 
 ```text
-final_candidate/metrics_best.json
+modules/vo/final_candidate/metrics_best.json
+modules/vo/final_candidate/ChatGPT_spokesperson_leaderboard.json
+modules/vo/output/evaluation_report.json
 ```
 
 ---
 
-## Experimental Results Comparison
+## 9. Folder Structure
 
-The following table summarizes the performance of different monocular VO configurations tested on the **AMtown02** sequence.
-
-| Version | Configuration | ATE RMSE (m) | RPE Trans Drift (m/m) | RPE Rot Drift (deg/100m) | Completeness (%) | Notes |
-|---|---|---:|---:|---:|---:|---|
-| V1 | `KeyFrameTrajectory.txt` + original high-frequency GT | 54.397 | 2.316 | 74.015 | 5.09 | Only keyframes were evaluated, so completeness was severely underestimated. Not suitable as the final result. |
-| V2 | `CameraTrajectory.txt` + image-synchronized GT + old HK-style config | 53.946 | 2.077 | **67.043** | 98.68 | First valid full-frame evaluation result after fixing the GT synchronization issue. |
-| V3 | Official **AMtown** calibration + medium tuning | **52.988** | 2.067 | 67.079 | 98.79 | Best overall balance and lowest ATE among all tested settings. Recommended final candidate. |
-| V4 | Official **AMtown** calibration + aggressive ORB tuning | 118.237 | 2.111 | 92.059 | 98.76 | More aggressive feature extraction increased noise and degraded trajectory accuracy. |
-| V5 | Official **AMtown** calibration + 2× downsample + medium tuning | 117.771 | **1.899** | 83.185 | **98.93** | Downsampling slightly reduced translational drift but significantly worsened global trajectory accuracy. |
-
-## Discussion
-
-Several important observations can be drawn from the experiments:
-
-1. Using `KeyFrameTrajectory.txt` is not suitable for the final leaderboard evaluation, because it contains only sparse keyframes and leads to extremely low completeness.
-
-2. Synchronizing the ground truth with image timestamps is essential. After this correction, completeness increased from **5.09%** to **over 98%**, confirming that the evaluation pipeline became consistent with the image sequence.
-
-3. The official **AMtown** calibration provided a more reliable and better-matched configuration for AMtown02 than the earlier HK-style configuration.
-
-4. The **medium-strength ORB setting** provided the best overall result. It achieved the lowest ATE while maintaining high completeness.
-
-5. More aggressive ORB tuning did not improve performance. Although more features were extracted, the additional weak or noisy features likely introduced more unstable matches and increased global drift.
-
-6. **2× image downsampling** is not a good optimization direction for AMtown02. While translational drift was slightly reduced, the global trajectory accuracy became much worse, suggesting that this aerial sequence benefits from preserving original-resolution image details.
-
-## Recommended Final Configuration
-
-Based on the current experiments, the recommended final setting is:
-
-- **Official AMtown calibration**
-- **Original image resolution**
-- **Medium ORB tuning**
-
-This setting was selected because it achieved the lowest ATE RMSE while maintaining high completeness and stable overall drift performance across the tested configurations.
-
-- **ATE RMSE:** 52.988 m
-- **RPE Trans Drift:** 2.067 m/m
-- **RPE Rot Drift:** 67.079 deg/100m
-- **Completeness:** 98.79%
-
-## Key Observations
-
-1. **Camera trajectory performed much better than keyframe-only trajectory** for final reporting.
-2. **Ground-truth synchronization to image timestamps** was necessary to obtain a fair completeness score.
-3. Moderate hyperparameter tuning improved stability, while overly aggressive settings degraded ATE noticeably.
-4. Image downsampling increased completeness in some cases but did not necessarily improve absolute accuracy.
-
-These observations are consistent with the engineering emphasis in the ORB-SLAM3 tutorial slides, which discuss feature-number tuning and image downsampling as practical robustness levers. 
+```text
+modules/vo/
+├── configs/
+│   ├── camera_config_amtown02_medium.yaml
+│   ├── camera_config_amtown02_aggressive.yaml
+│   ├── camera_config_amtown02_medium_2x.yaml
+│   └── camera_config_amtown02_tuned.yaml
+├── figures/
+│   └── trajectory_evaluation...
+├── final_candidate/
+│   ├── figures/
+│   │   ├── ate.zip
+│   │   ├── best_result_summary.png
+│   │   ├── metrics_comparison.png
+│   │   ├── sample_images.png
+│   │   └── trajectory_evaluation_best.png
+│   ├── recheck_best/
+│   │   ├── ate.zip
+│   │   ├── rpe_rot.zip
+│   │   └── rpe_trans.zip
+│   ├── CameraTrajectory_best.txt
+│   ├── ChatGPT_spokesperson_leaderboard.json
+│   ├── KeyFrameTrajectory_best.txt
+│   └── metrics_best.json
+├── output/
+│   └── evaluation_report.json
+├── scripts/
+│   ├── data_prep/
+│   ├── evaluation/
+│   └── inspection/
+└── README.md
+```
 
 ---
 
-## Figures
+## 10. Final Artifacts
 
 ### Final trajectory evaluation
 
 ![Final trajectory evaluation](final_candidate/figures/trajectory_evaluation_best.png)
 
-### Metrics comparison across configurations
+### Metrics comparison
 
 ![Metrics comparison](final_candidate/figures/metrics_comparison.png)
 
-### Sample images from AMtown02
+### Sample images
 
 ![Sample images](final_candidate/figures/sample_images.png)
 
@@ -265,39 +217,26 @@ These observations are consistent with the engineering emphasis in the ORB-SLAM3
 
 ---
 
-## Notes on Course Integration
+## 11. Repository Inspection
 
-The AAE5303 project pipeline progresses from:
-
-* **UAV trajectory / pose estimation**
-* **3D mapping**
-* **semantic segmentation**
-* **higher-level navigation / decision making**
-
-This VO module corresponds to the first stage of that perception stack.
-
----
-
-## Repository Inspection Requirement
-
-The teaching plan states that the private project repository should be reproducible and that the Lead TA and Dr Hsu should be added as collaborators for inspection. 
-
-Required collaborators:
+Required collaborators for inspection:
 
 * `Qian9921`
 * `qmohsu`
 
 ---
 
-## Acknowledgements
+## 12. Notes
+
+* `camera_config_amtown02_medium.yaml` is the **final selected configuration** used for the best V3 result.
+* `camera_config_amtown02_tuned.yaml` is an intermediate tuned baseline.
+* `camera_config_amtown02_aggressive.yaml` and `camera_config_amtown02_medium_2x.yaml` are comparison experiment settings.
+* The final submission result is based on the **V3 medium-tuning configuration**, not on the older HK-style config.
+
+---
+
+## 13. Acknowledgements
 
 * Course: **AAE5303 Robust Control Technology in Low-Altitude Aerial Vehicle**
 * Instructor: **Dr Li-Ta Hsu**
-* Visual SLAM baseline: **ORB-SLAM3**
-* Course references:
-
-  * Week 3: VO-related frameworks
-  * Week 4: ORB-SLAM3 tutorial
-  * Teaching plan and project milestone documents
-
-````
+* Baseline system: **ORB-SLAM3**
