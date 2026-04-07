@@ -1,0 +1,7 @@
+{
+  "miou": 98.2828,
+  "fwiou": 98.3182,
+  "dice_score": 99.1338,
+  "num_pairs": 48,
+  "num_classes": 2
+}

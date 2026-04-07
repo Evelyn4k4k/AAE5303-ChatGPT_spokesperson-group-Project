@@ -45,3 +45,11 @@ temp/
 
 # Large raw/intermediate data
 data/
+
+# Semantic segmentation module (vendor code + local datasets / weights)
+modules/segmentation/vendor/
+modules/segmentation/checkpoints/
+modules/segmentation/datasets/imgs/
+modules/segmentation/datasets/masks/
+modules/segmentation/results/predictions/
+modules/segmentation/results/experiments.csv
