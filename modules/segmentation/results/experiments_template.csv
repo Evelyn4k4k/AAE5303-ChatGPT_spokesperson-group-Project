@@ -1,0 +1,2 @@
+run_id,lr,batch_size,epochs,scale,amp,val_percent,miou,fwiou,dice_score,checkpoint,notes
+exp001,1e-4,4,40,0.5,true,10,,,,checkpoints/checkpoint_epoch40.pth,baseline

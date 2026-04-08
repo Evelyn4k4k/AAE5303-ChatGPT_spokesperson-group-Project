@@ -1,0 +1,6 @@
+{
+  "dice_score": 0.0,
+  "miou": 0.0,
+  "fwiou": 0.0,
+  "notes": "Replace with evaluate_masks.py output after you have real predictions vs ground-truth masks."
+}
