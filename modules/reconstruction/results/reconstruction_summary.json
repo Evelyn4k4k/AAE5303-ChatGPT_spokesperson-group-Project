@@ -1,0 +1,343 @@
+{
+  "results_dir": "/home/wym/AAE5303-ChatGPT_spokesperson-group-Project/modules/reconstruction/results",
+  "output_count": 40,
+  "outputs": [
+    {
+      "relative_path": "amtown02_baseline/probe_force_cuda.splat",
+      "file_name": "probe_force_cuda.splat",
+      "file_type": "splat",
+      "size_bytes": 352512,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_baseline/probe_force_cuda_preload.splat",
+      "file_name": "probe_force_cuda_preload.splat",
+      "file_type": "splat",
+      "size_bytes": 352512,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_baseline/probe_force_cuda_wsl.splat",
+      "file_name": "probe_force_cuda_wsl.splat",
+      "file_type": "splat",
+      "size_bytes": 352512,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_baseline/probe_gpu.splat",
+      "file_name": "probe_gpu.splat",
+      "file_type": "splat",
+      "size_bytes": 352512,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_baseline/probe_gpu2.splat",
+      "file_name": "probe_gpu2.splat",
+      "file_type": "splat",
+      "size_bytes": 352512,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_baseline/probe_gpu_no_cublas_ws.splat",
+      "file_name": "probe_gpu_no_cublas_ws.splat",
+      "file_type": "splat",
+      "size_bytes": 1141728,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_baseline/scene_from_existing_run.ply",
+      "file_name": "scene_from_existing_run.ply",
+      "file_type": "ply",
+      "size_bytes": 7441578,
+      "iteration": 500,
+      "vertex_count": 30000
+    },
+    {
+      "relative_path": "amtown02_baseline/scene_small_cpu.ply",
+      "file_name": "scene_small_cpu.ply",
+      "file_type": "ply",
+      "size_bytes": 2733546,
+      "iteration": 300,
+      "vertex_count": 11016
+    },
+    {
+      "relative_path": "amtown02_baseline/scene_small_cpu.splat",
+      "file_name": "scene_small_cpu.splat",
+      "file_type": "splat",
+      "size_bytes": 352512,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_colmap_s6_4k.ply",
+      "file_name": "amtown02_colmap_s6_4k.ply",
+      "file_type": "ply",
+      "size_bytes": 41102124,
+      "iteration": 4000,
+      "vertex_count": 165728
+    },
+    {
+      "relative_path": "amtown02_gpu_docker_smoke.splat",
+      "file_name": "amtown02_gpu_docker_smoke.splat",
+      "file_type": "splat",
+      "size_bytes": 1141728,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_gpu_final.ply",
+      "file_name": "amtown02_gpu_final.ply",
+      "file_type": "ply",
+      "size_bytes": 31437564,
+      "iteration": 2000,
+      "vertex_count": 126758
+    },
+    {
+      "relative_path": "amtown02_gpu_final.splat",
+      "file_name": "amtown02_gpu_final.splat",
+      "file_type": "splat",
+      "size_bytes": 4064672,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_gpu_final_1000.ply",
+      "file_name": "amtown02_gpu_final_1000.ply",
+      "file_type": "ply",
+      "size_bytes": 31437564,
+      "iteration": 1000,
+      "vertex_count": 126758
+    },
+    {
+      "relative_path": "amtown02_gpu_final_1000.splat",
+      "file_name": "amtown02_gpu_final_1000.splat",
+      "file_type": "splat",
+      "size_bytes": 4064672,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_gpu_final_1500.ply",
+      "file_name": "amtown02_gpu_final_1500.ply",
+      "file_type": "ply",
+      "size_bytes": 31437564,
+      "iteration": 1500,
+      "vertex_count": 126758
+    },
+    {
+      "relative_path": "amtown02_gpu_final_1500.splat",
+      "file_name": "amtown02_gpu_final_1500.splat",
+      "file_type": "splat",
+      "size_bytes": 4064672,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_gpu_final_2000.ply",
+      "file_name": "amtown02_gpu_final_2000.ply",
+      "file_type": "ply",
+      "size_bytes": 31437564,
+      "iteration": 2000,
+      "vertex_count": 126758
+    },
+    {
+      "relative_path": "amtown02_gpu_final_2000.splat",
+      "file_name": "amtown02_gpu_final_2000.splat",
+      "file_type": "splat",
+      "size_bytes": 4064672,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_gpu_final_500.ply",
+      "file_name": "amtown02_gpu_final_500.ply",
+      "file_type": "ply",
+      "size_bytes": 8849970,
+      "iteration": 500,
+      "vertex_count": 35679
+    },
+    {
+      "relative_path": "amtown02_gpu_final_500.splat",
+      "file_name": "amtown02_gpu_final_500.splat",
+      "file_type": "splat",
+      "size_bytes": 1141728,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_quality_balanced.ply",
+      "file_name": "amtown02_quality_balanced.ply",
+      "file_type": "ply",
+      "size_bytes": 174665996,
+      "iteration": 8000,
+      "vertex_count": 704292
+    },
+    {
+      "relative_path": "amtown02_quality_balanced_2000.ply",
+      "file_name": "amtown02_quality_balanced_2000.ply",
+      "file_type": "ply",
+      "size_bytes": 59203644,
+      "iteration": 2000,
+      "vertex_count": 238718
+    },
+    {
+      "relative_path": "amtown02_quality_balanced_4000.ply",
+      "file_name": "amtown02_quality_balanced_4000.ply",
+      "file_type": "ply",
+      "size_bytes": 174665996,
+      "iteration": 4000,
+      "vertex_count": 704292
+    },
+    {
+      "relative_path": "amtown02_quality_balanced_6000.ply",
+      "file_name": "amtown02_quality_balanced_6000.ply",
+      "file_type": "ply",
+      "size_bytes": 174665996,
+      "iteration": 6000,
+      "vertex_count": 704292
+    },
+    {
+      "relative_path": "amtown02_quality_balanced_8000.ply",
+      "file_name": "amtown02_quality_balanced_8000.ply",
+      "file_type": "ply",
+      "size_bytes": 174665996,
+      "iteration": 8000,
+      "vertex_count": 704292
+    },
+    {
+      "relative_path": "amtown02_vo_refined_10000/scene_gpu_resume_n10000_d3.ply",
+      "file_name": "scene_gpu_resume_n10000_d3.ply",
+      "file_type": "ply",
+      "size_bytes": 95207689,
+      "iteration": 2000,
+      "vertex_count": 915452
+    },
+    {
+      "relative_path": "amtown02_vo_refined_10000_fresh/scene_gpu_safe_n10000_d3.ply",
+      "file_name": "scene_gpu_safe_n10000_d3.ply",
+      "file_type": "ply",
+      "size_bytes": 144655635,
+      "iteration": 10000,
+      "vertex_count": 1390913
+    },
+    {
+      "relative_path": "amtown02_vo_refined_15000/scene_gpu_safe_n15000_d3.ply",
+      "file_name": "scene_gpu_safe_n15000_d3.ply",
+      "file_type": "ply",
+      "size_bytes": 216444131,
+      "iteration": 15000,
+      "vertex_count": 2081187
+    },
+    {
+      "relative_path": "amtown02_vo_refined_2000/scene_gpu_safe_n2000_d3.ply",
+      "file_name": "scene_gpu_safe_n2000_d3.ply",
+      "file_type": "ply",
+      "size_bytes": 3244440,
+      "iteration": 2000,
+      "vertex_count": 31190
+    },
+    {
+      "relative_path": "amtown02_vo_refined_20000/scene_gpu_safe_n20000_d3.ply",
+      "file_name": "scene_gpu_safe_n20000_d3.ply",
+      "file_type": "ply",
+      "size_bytes": 287606443,
+      "iteration": 20000,
+      "vertex_count": 2765440
+    },
+    {
+      "relative_path": "amtown02_vo_refined_25000/scene_gpu_safe_n25000_d3.ply",
+      "file_name": "scene_gpu_safe_n25000_d3.ply",
+      "file_type": "ply",
+      "size_bytes": 369768523,
+      "iteration": 25000,
+      "vertex_count": 3555460
+    },
+    {
+      "relative_path": "amtown02_vo_refined_4000/scene_gpu_safe_n4000_d3.ply",
+      "file_name": "scene_gpu_safe_n4000_d3.ply",
+      "file_type": "ply",
+      "size_bytes": 25354321,
+      "iteration": 4000,
+      "vertex_count": 243785
+    },
+    {
+      "relative_path": "amtown02_vo_refined_6000/scene_gpu_safe_n6000_d3.ply",
+      "file_name": "scene_gpu_safe_n6000_d3.ply",
+      "file_type": "ply",
+      "size_bytes": 69356305,
+      "iteration": 6000,
+      "vertex_count": 666881
+    },
+    {
+      "relative_path": "amtown02_vo_refined_8000/scene_gpu_safe_n8000_d3.ply",
+      "file_name": "scene_gpu_safe_n8000_d3.ply",
+      "file_type": "ply",
+      "size_bytes": 95207689,
+      "iteration": 8000,
+      "vertex_count": 915452
+    },
+    {
+      "relative_path": "amtown02_vo_refined_d2/scene_gpu_safe_n1000_d2.ply",
+      "file_name": "scene_gpu_safe_n1000_d2.ply",
+      "file_type": "ply",
+      "size_bytes": 1146344,
+      "iteration": 1000,
+      "vertex_count": 11016
+    },
+    {
+      "relative_path": "amtown02_vo_safe/scene_gpu_safe_n500_d3.ply",
+      "file_name": "scene_gpu_safe_n500_d3.ply",
+      "file_type": "ply",
+      "size_bytes": 1146343,
+      "iteration": 500,
+      "vertex_count": 11016
+    },
+    {
+      "relative_path": "cpu_check.splat",
+      "file_name": "cpu_check.splat",
+      "file_type": "splat",
+      "size_bytes": 1141728,
+      "iteration": null,
+      "vertex_count": null
+    },
+    {
+      "relative_path": "amtown02_vo_refined_30000_gpu/scene_gpu_safe_n30000_d3.ply",
+      "file_name": "scene_gpu_safe_n30000_d3.ply",
+      "file_type": "ply",
+      "size_bytes": 467967715,
+      "iteration": 30000,
+      "vertex_count": 4499683
+    },
+    {
+      "relative_path": "amtown02_vo_refined_40000_gpu/scene_gpu_safe_n40000_d3.ply",
+      "file_name": "scene_gpu_safe_n40000_d3.ply",
+      "file_type": "ply",
+      "size_bytes": 499061219,
+      "iteration": 40000,
+      "vertex_count": 4798659
+    }
+  ],
+  "camera_sets": {
+    "amtown02_baseline/cameras.json": 292,
+    "amtown02_vo_refined_10000/cameras.json": 65,
+    "amtown02_vo_refined_10000_fresh/cameras.json": 65,
+    "amtown02_vo_refined_15000/cameras.json": 65,
+    "amtown02_vo_refined_2000/cameras.json": 65,
+    "amtown02_vo_refined_20000/cameras.json": 65,
+    "amtown02_vo_refined_25000/cameras.json": 65,
+    "amtown02_vo_refined_4000/cameras.json": 65,
+    "amtown02_vo_refined_6000/cameras.json": 65,
+    "amtown02_vo_refined_8000/cameras.json": 65,
+    "amtown02_vo_refined_d2/cameras.json": 65,
+    "amtown02_vo_safe/cameras.json": 65,
+    "cameras.json": 292,
+    "amtown02_vo_refined_30000_gpu/cameras.json": 65,
+    "amtown02_vo_refined_40000_gpu/cameras.json": 65
+  }
+}
