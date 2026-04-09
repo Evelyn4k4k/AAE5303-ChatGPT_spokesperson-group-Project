@@ -19,6 +19,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader, random_split
+from tqdm import tqdm
 
 import yaml
 
@@ -52,7 +53,7 @@ def evaluate_epoch(model, loader, device, num_classes: int, amp: bool) -> dict:
     n_batches = 0
     ce = nn.CrossEntropyLoss()
 
-    for batch in loader:
+    for batch in tqdm(loader, desc="Valid", leave=False):
         images = batch["image"].to(device=device, dtype=torch.float32)
         targets = batch["mask"].to(device=device, dtype=torch.long)
         with torch.autocast(device.type if device.type != "mps" else "cpu", enabled=amp):
@@ -161,7 +162,8 @@ def main() -> int:
         model.train()
         running = 0.0
         n_batches = 0
-        for batch in train_loader:
+        train_bar = tqdm(train_loader, desc=f"Epoch {epoch}/{epochs}", leave=True)
+        for batch in train_bar:
             images = batch["image"].to(device=device, dtype=torch.float32)
             targets = batch["mask"].to(device=device, dtype=torch.long)
             optimizer.zero_grad(set_to_none=True)
@@ -173,6 +175,7 @@ def main() -> int:
             scaler.update()
             running += float(loss.item())
             n_batches += 1
+            train_bar.set_postfix(loss=f"{loss.item():.4f}")
 
         train_loss = 0.0 if n_batches == 0 else running / n_batches
         val_metrics = evaluate_epoch(model, val_loader, device, n_classes, amp)

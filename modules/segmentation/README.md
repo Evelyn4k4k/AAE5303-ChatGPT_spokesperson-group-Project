@@ -54,6 +54,7 @@ modules/segmentation/
 │   ├── analyze_mask_classes.py
 │   ├── remap_uavscenes_masks.py
 │   ├── train_uavscenes_unet.py
+│   ├── plot_training_curves.py
 │   ├── generate_demo_dataset.py
 │   ├── prepare_pseudo_from_images.py
 │   ├── run_smoke_test.py
@@ -208,6 +209,19 @@ This writes checkpoints to `modules/segmentation/checkpoints/` and a log to:
 modules/segmentation/results/uavscenes_training_log.json
 ```
 
+### Step E.1: plot training curves for presentation
+
+```bash
+python modules/segmentation/scripts/plot_training_curves.py
+```
+
+Outputs:
+
+```text
+modules/segmentation/figures/training_loss_curve.png
+modules/segmentation/figures/validation_metrics_curve.png
+```
+
 ### Step F: predict + evaluate + export leaderboard JSON
 
 Use `predict_unet.py` to generate prediction PNGs for the evaluation split, then:
@@ -285,3 +299,41 @@ Recommended for your report / presentation:
 
 - Course: **AAE5303 Robust Control Technology in Low-Altitude Aerial Vehicle**
 - Baseline: **Pytorch-UNet** (milesial)
+
+---
+
+## 13. Update Log (for grading / reproducibility)
+
+This section explicitly records engineering updates in this module to help TA/instructor quickly verify work scope.
+
+### 2026-04: Core module scaffolding
+
+- Added full module structure under `modules/segmentation/`:
+  - `configs/`, `scripts/`, `datasets/`, `results/`, `figures/`, `final_candidate/`
+- Added reproducibility docs and command examples in this README.
+- Added local smoke pipeline (`run_smoke_test.py`) for environment sanity checks.
+
+### 2026-04: UAVScenes real-evaluation workflow
+
+- Added `configs/uavscenes_amtown02_interval5_14cls.yaml` for course-aligned setup.
+- Added `scripts/analyze_mask_classes.py` to inspect actual label IDs in masks.
+- Added `scripts/remap_uavscenes_masks.py` to map sparse original IDs to contiguous 0..13.
+- Added `scripts/train_uavscenes_unet.py`:
+  - AdamW optimizer (instead of upstream RMSprop default),
+  - support for long training + checkpoint logs,
+  - `--epochs` override for fast iterative checks.
+- Updated `.gitignore` to exclude large local UAVScenes data from commits.
+
+### 2026-04: Training visibility & presentation assets
+
+- Added per-batch tqdm progress visualization in `train_uavscenes_unet.py` (loss shown live).
+- Added `scripts/plot_training_curves.py` for automatic figure generation:
+  - `figures/training_loss_curve.png`
+  - `figures/validation_metrics_curve.png`
+
+### How we document future updates
+
+- For every new script/config:
+  1. add path + purpose in this section,
+  2. add exact command usage in the corresponding workflow section,
+  3. note impact on leaderboard reproducibility (metrics / data / class mapping).
