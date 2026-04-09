@@ -12,6 +12,10 @@ This folder contains the **semantic segmentation** part of the AAE5303 group pro
 
 **Leaderboard reference (UNet demo schema):** [AAE5303_UNet_demo / leaderboard](https://github.com/Qian9921/AAE5303_UNet_demo/tree/main/leaderboard)
 
+**Important (real evaluation dataset):** UNet leaderboard uses **UAVScenes AMtown02 (interval=5)** with semantic masks (not just the raw MARS rosbag). See:
+- [AAE5303_UNet_demo leaderboard guide](https://github.com/Qian9921/AAE5303_UNet_demo/tree/main/leaderboard)
+- [UAVScenes dataset repo](https://github.com/sijieaaa/UAVScenes)
+
 ---
 
 ## 2. Team Role
@@ -40,12 +44,16 @@ modules/segmentation/
 ├── configs/
 │   ├── train_default.yaml
 │   └── train_smoke.yaml
+│   └── uavscenes_amtown02_interval5_14cls.yaml
 ├── datasets/
 │   └── README.md
 ├── datasets/imgs/          # git-ignored (you create locally)
 ├── datasets/masks/         # git-ignored (you create locally)
 ├── scripts/
 │   ├── setup_vendor.py
+│   ├── analyze_mask_classes.py
+│   ├── remap_uavscenes_masks.py
+│   ├── train_uavscenes_unet.py
 │   ├── generate_demo_dataset.py
 │   ├── prepare_pseudo_from_images.py
 │   ├── run_smoke_test.py
@@ -145,6 +153,74 @@ Suggested tuning dimensions (document each run in `results/experiments_template.
 - `scale` (image downscale factor)
 - `amp` on/off
 - `classes` (only if your labeling schema changes)
+
+---
+
+## 7.1 UAVScenes AMtown02 interval=5 (14-class baseline workflow)
+
+The course UNet baseline uses **14 valid classes** (exclude unnamed IDs in UAVScenes `cmap.py`) and recommends AdamW + low LR.
+
+### Step A: download UAVScenes interval=5
+
+Get **interval=5** from UAVScenes download links (Google Drive / OneDrive / Baidu / HuggingFace):  
+[UAVScenes](https://github.com/sijieaaa/UAVScenes)
+
+You need the **camera images** and **camera semantic labels** for **AMtown02**.
+
+### Step B: place data under this module
+
+Create:
+
+```text
+modules/segmentation/datasets/uavscenes_amtown02_interval5/
+├── imgs/
+└── masks_raw/
+```
+
+Put the original UAVScenes mask PNGs into `masks_raw/`.
+
+### Step C: analyze class IDs (sanity check)
+
+```bash
+python modules/segmentation/scripts/analyze_mask_classes.py \
+  --mask-dir modules/segmentation/datasets/uavscenes_amtown02_interval5/masks_raw
+```
+
+### Step D: remap masks to 0..13 (continuous IDs)
+
+```bash
+python modules/segmentation/scripts/remap_uavscenes_masks.py \
+  --in-dir modules/segmentation/datasets/uavscenes_amtown02_interval5/masks_raw \
+  --out-dir modules/segmentation/datasets/uavscenes_amtown02_interval5/masks_remapped_14 \
+  --valid-class-ids 0 1 2 3 5 6 13 14 15 16 17 19 20 24
+```
+
+### Step E: train with AdamW (recommended)
+
+```bash
+python modules/segmentation/scripts/train_uavscenes_unet.py \
+  --config modules/segmentation/configs/uavscenes_amtown02_interval5_14cls.yaml
+```
+
+This writes checkpoints to `modules/segmentation/checkpoints/` and a log to:
+
+```text
+modules/segmentation/results/uavscenes_training_log.json
+```
+
+### Step F: predict + evaluate + export leaderboard JSON
+
+Use `predict_unet.py` to generate prediction PNGs for the evaluation split, then:
+
+```bash
+python modules/segmentation/scripts/evaluate_masks.py \
+  --pred-dir <your_pred_dir> \
+  --gt-dir modules/segmentation/datasets/uavscenes_amtown02_interval5/masks_remapped_14 \
+  --num-classes 14 \
+  --json-out modules/segmentation/final_candidate/metrics_best.json
+
+python modules/segmentation/scripts/export_leaderboard_json.py
+```
 
 ---
 

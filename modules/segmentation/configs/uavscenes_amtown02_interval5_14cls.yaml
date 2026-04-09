@@ -1,0 +1,23 @@
+# UAVScenes AMtown02 (interval=5) — recommended baseline-like config
+# Based on AAE5303 UNet demo tips: AdamW, lr=5e-5, scale=0.25, BS=1, ~80-100 epochs.
+
+dataset:
+  imgs_dir: datasets/uavscenes_amtown02_interval5/imgs
+  masks_dir: datasets/uavscenes_amtown02_interval5/masks_remapped_14
+
+# Valid (named) class IDs from UAVScenes cmap.py that are commonly present
+# and used by the course baseline (14 classes).
+valid_class_ids: [0, 1, 2, 3, 5, 6, 13, 14, 15, 16, 17, 19, 20, 24]
+
+train:
+  epochs: 80
+  batch_size: 1
+  learning_rate: 0.00005
+  weight_decay: 1e-8
+  scale: 0.25
+  amp: false
+
+model:
+  n_channels: 3
+  n_classes: 14
+  bilinear: false
