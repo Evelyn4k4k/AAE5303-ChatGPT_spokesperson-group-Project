@@ -93,6 +93,7 @@ def main() -> int:
     p = argparse.ArgumentParser(description="Train UNet on UAVScenes masks (remapped) with AdamW.")
     p.add_argument("--config", type=Path, default=MODULE_ROOT / "configs" / "uavscenes_amtown02_interval5_14cls.yaml")
     p.add_argument("--save-dir", type=Path, default=MODULE_ROOT / "checkpoints")
+    p.add_argument("--epochs", type=int, default=None, help="Override epochs in YAML (optional).")
     p.add_argument("--val-percent", type=float, default=None)
     p.add_argument("--seed", type=int, default=0)
     args = p.parse_args()
@@ -113,6 +114,8 @@ def main() -> int:
         return 1
 
     epochs = int(train_cfg.get("epochs", 80))
+    if args.epochs is not None:
+        epochs = int(args.epochs)
     batch_size = int(train_cfg.get("batch_size", 1))
     lr = float(train_cfg.get("learning_rate", 5e-5))
     wd = float(train_cfg.get("weight_decay", 1e-8))

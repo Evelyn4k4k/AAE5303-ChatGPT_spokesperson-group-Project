@@ -51,5 +51,6 @@ modules/segmentation/vendor/
 modules/segmentation/checkpoints/
 modules/segmentation/datasets/imgs/
 modules/segmentation/datasets/masks/
+modules/segmentation/datasets/uavscenes_amtown02_interval5/
 modules/segmentation/results/predictions/
 modules/segmentation/results/experiments.csv
