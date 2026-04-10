@@ -292,6 +292,25 @@ Recommended for your report / presentation:
 - `final_candidate/metrics_best.json` — best metrics
 - `final_candidate/ChatGPT_spokesperson_leaderboard.json` — submission JSON
 - `results/experiments_template.csv` — copy to `experiments.csv` and fill in all sweeps
+- `figures/AAE5303_Group_Project_Technical_Overview.pptx` — auto-generated technical overview (VO + 3D + segmentation stack). Regenerate after editing the script:
+
+```bash
+python modules/segmentation/scripts/generate_group_presentation_pptx.py
+```
+
+### 11.1 Part 3 only (semantic segmentation) — real charts + PPTX
+
+Use this for **your** slides (Part 3), with figures driven by `results/uavscenes_training_log.json` and `final_candidate/metrics_best.json`:
+
+```bash
+python modules/segmentation/scripts/plot_segmentation_part3_figures.py
+python modules/segmentation/scripts/generate_segmentation_part3_pptx.py
+```
+
+Outputs:
+
+- `figures/part3_presentation/part3_*.png` — loss curves, val metrics, final metric bar chart, 2×2 dashboard
+- `figures/part3_presentation/AAE5303_Part3_Semantic_Segmentation.pptx` — Part 3 deck (copy slides into the group PolyU template if needed). If `figures/training_loss_curve.png` and `figures/validation_metrics_curve.png` exist (from `plot_training_curves.py`), they are **also** embedded at the end — same data as the Part 3–style plots, different styling.
 
 ---
 
@@ -330,6 +349,8 @@ This section explicitly records engineering updates in this module to help TA/in
 - Added `scripts/plot_training_curves.py` for automatic figure generation:
   - `figures/training_loss_curve.png`
   - `figures/validation_metrics_curve.png`
+- Added `scripts/generate_group_presentation_pptx.py` + `requirements.txt` entry `python-pptx` to build `figures/AAE5303_Group_Project_Technical_Overview.pptx` (course-required tech stack + extras).
+- Added `scripts/plot_segmentation_part3_figures.py` and `scripts/generate_segmentation_part3_pptx.py` for **Part 3–only** presentation assets (`figures/part3_presentation/`), using real training log + `metrics_best.json`.
 
 ### How we document future updates
 
