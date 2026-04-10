@@ -23,7 +23,9 @@ def main() -> int:
 
     parser = argparse.ArgumentParser(description="Predict segmentation masks with a trained UNet checkpoint.")
     parser.add_argument("--model", "-m", type=Path, required=True, help="Path to .pth checkpoint.")
-    parser.add_argument("--input", "-i", nargs="+", required=True, help="Input image files.")
+    parser.add_argument("--input", "-i", nargs="+", default=None, help="Input image files.")
+    parser.add_argument("--input-dir", type=Path, default=None, help="Optional directory of input images.")
+    parser.add_argument("--glob", type=str, default="*.jpg", help="Pattern used with --input-dir (e.g. *.jpg, *.png).")
     parser.add_argument("--output-dir", "-o", type=Path, default=MODULE_ROOT / "results" / "predictions")
     parser.add_argument("--scale", "-s", type=float, default=0.5)
     parser.add_argument("--mask-threshold", "-t", type=float, default=0.5)
@@ -81,8 +83,25 @@ def main() -> int:
             out[mask == i] = v
         return Image.fromarray(out)
 
-    for fn in args.input:
-        p = Path(fn)
+    input_files: list[Path] = []
+    if args.input_dir is not None:
+        input_files.extend(sorted(args.input_dir.glob(args.glob)))
+    if args.input:
+        input_files.extend([Path(x) for x in args.input])
+    # Remove duplicates while preserving order
+    uniq: list[Path] = []
+    seen = set()
+    for p in input_files:
+        key = str(p.resolve()) if p.exists() else str(p)
+        if key not in seen:
+            seen.add(key)
+            uniq.append(p)
+    input_files = uniq
+    if not input_files:
+        logging.error("No input images provided. Use --input and/or --input-dir.")
+        return 1
+
+    for p in input_files:
         logging.info("Predicting %s", p)
         img = Image.open(p)
         mask = predict_img(net, img, args.scale, args.mask_threshold)

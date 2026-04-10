@@ -2,8 +2,8 @@
   "group_name": "ChatGPT_spokesperson",
   "project_private_repo_url": "https://github.com/Evelyn4k4k/AAE5303-ChatGPT_spokesperson-group-Project.git",
   "metrics": {
-    "dice_score": 0.0,
-    "miou": 0.0,
-    "fwiou": 0.0
+    "dice_score": 87.2757,
+    "miou": 78.238,
+    "fwiou": 89.6511
   }
 }

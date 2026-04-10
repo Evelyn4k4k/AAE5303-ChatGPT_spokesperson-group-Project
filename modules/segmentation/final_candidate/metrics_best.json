@@ -1,6 +1,7 @@
 {
-  "dice_score": 0.0,
-  "miou": 0.0,
-  "fwiou": 0.0,
-  "notes": "Replace with evaluate_masks.py output after you have real predictions vs ground-truth masks."
+  "miou": 78.238,
+  "fwiou": 89.6511,
+  "dice_score": 87.2757,
+  "num_pairs": 1380,
+  "num_classes": 14
 }

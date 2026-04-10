@@ -1,0 +1,713 @@
+[
+  {
+    "epoch": 2,
+    "train_loss": 0.4963520906397686,
+    "val_loss": 0.5072806024033091,
+    "dice_score": 63.06270653386951,
+    "miou": 24.895800070267374,
+    "fwiou": 73.80848504342636,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch2.pth"
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.320272720342385,
+    "val_loss": 0.3652355323235194,
+    "dice_score": 62.25521182206404,
+    "miou": 32.901305544931745,
+    "fwiou": 79.55525280687766,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch3.pth"
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.2390529716120442,
+    "val_loss": 0.3867836217733397,
+    "dice_score": 61.30430175806813,
+    "miou": 34.804055979133196,
+    "fwiou": 78.70538258971813,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch4.pth"
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.18760804918965088,
+    "val_loss": 0.33119746967070346,
+    "dice_score": 66.61928782790149,
+    "miou": 38.25611799869637,
+    "fwiou": 81.0817898056253,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch5.pth"
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.13899143701854152,
+    "val_loss": 0.3113615545241729,
+    "dice_score": 77.54005193006884,
+    "miou": 46.34783428294315,
+    "fwiou": 82.02245129334877,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch6.pth"
+  },
+  {
+    "epoch": 7,
+    "train_loss": 0.12343834538534644,
+    "val_loss": 0.34134237964948017,
+    "dice_score": 75.71627810750121,
+    "miou": 44.90034080462404,
+    "fwiou": 80.69870548968669,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch7.pth"
+  },
+  {
+    "epoch": 8,
+    "train_loss": 0.12494963331330994,
+    "val_loss": 0.31112413437686104,
+    "dice_score": 78.79784156231177,
+    "miou": 47.48622143809659,
+    "fwiou": 84.12213274762324,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch8.pth"
+  },
+  {
+    "epoch": 9,
+    "train_loss": 0.08483726255919623,
+    "val_loss": 0.3039354827740918,
+    "dice_score": 72.28640931498443,
+    "miou": 48.17037512895282,
+    "fwiou": 84.37026777438606,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch9.pth"
+  },
+  {
+    "epoch": 10,
+    "train_loss": 0.08311306331876588,
+    "val_loss": 0.3240852710669455,
+    "dice_score": 70.65038653760547,
+    "miou": 45.98276759133082,
+    "fwiou": 82.78088375314255,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch10.pth"
+  },
+  {
+    "epoch": 11,
+    "train_loss": 0.07432462944800632,
+    "val_loss": 0.3640361054112082,
+    "dice_score": 77.17759131351798,
+    "miou": 51.06281009708583,
+    "fwiou": 84.53608167858077,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch11.pth"
+  },
+  {
+    "epoch": 12,
+    "train_loss": 0.09972117845143001,
+    "val_loss": 0.31286731286757236,
+    "dice_score": 79.75896157276416,
+    "miou": 53.982427869058384,
+    "fwiou": 85.41199461638915,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch12.pth"
+  },
+  {
+    "epoch": 13,
+    "train_loss": 0.05984415525522521,
+    "val_loss": 0.25806224626907404,
+    "dice_score": 82.24344155777777,
+    "miou": 56.06299483583269,
+    "fwiou": 86.81792223126652,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch13.pth"
+  },
+  {
+    "epoch": 14,
+    "train_loss": 0.0654389513341557,
+    "val_loss": 0.2869657543150411,
+    "dice_score": 77.43035314605571,
+    "miou": 50.97103642660322,
+    "fwiou": 84.33466590992474,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch14.pth"
+  },
+  {
+    "epoch": 15,
+    "train_loss": 0.07904892581351546,
+    "val_loss": 0.25732926516861154,
+    "dice_score": 70.37538846911443,
+    "miou": 51.13563576783068,
+    "fwiou": 86.15207795641811,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch15.pth"
+  },
+  {
+    "epoch": 16,
+    "train_loss": 0.050922543876362,
+    "val_loss": 0.3199572063496579,
+    "dice_score": 77.3633272584021,
+    "miou": 51.0992619509589,
+    "fwiou": 85.77427195681204,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch16.pth"
+  },
+  {
+    "epoch": 17,
+    "train_loss": 0.04947664253653632,
+    "val_loss": 0.31616438747100206,
+    "dice_score": 73.32478981604096,
+    "miou": 53.182292964288216,
+    "fwiou": 86.0199512858197,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch17.pth"
+  },
+  {
+    "epoch": 18,
+    "train_loss": 0.04922523699256917,
+    "val_loss": 0.26478301261322224,
+    "dice_score": 69.5768598534725,
+    "miou": 54.67393980813428,
+    "fwiou": 86.49603918640216,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch18.pth"
+  },
+  {
+    "epoch": 19,
+    "train_loss": 0.05741250839259853,
+    "val_loss": 0.9717050525157348,
+    "dice_score": 42.35953789803423,
+    "miou": 23.592401808375776,
+    "fwiou": 57.349850135447056,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch19.pth"
+  },
+  {
+    "epoch": 20,
+    "train_loss": 0.06405804105119513,
+    "val_loss": 0.27352767235235026,
+    "dice_score": 74.2148679688585,
+    "miou": 59.21655509832576,
+    "fwiou": 87.6535734682582,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch20.pth"
+  },
+  {
+    "epoch": 21,
+    "train_loss": 0.03990793404103393,
+    "val_loss": 0.34723846050168294,
+    "dice_score": 75.52220942741953,
+    "miou": 59.20014463483475,
+    "fwiou": 86.51494742988012,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch21.pth"
+  },
+  {
+    "epoch": 22,
+    "train_loss": 0.04747672468362355,
+    "val_loss": 0.2859107949163603,
+    "dice_score": 75.33736314326205,
+    "miou": 58.65341149576846,
+    "fwiou": 87.1657457547965,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch22.pth"
+  },
+  {
+    "epoch": 23,
+    "train_loss": 0.039703051948053056,
+    "val_loss": 0.2825506865924251,
+    "dice_score": 76.4901265364579,
+    "miou": 60.98643684708189,
+    "fwiou": 87.44243352586413,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch23.pth"
+  },
+  {
+    "epoch": 24,
+    "train_loss": 0.05861422811779561,
+    "val_loss": 0.260010644874495,
+    "dice_score": 78.74101683490665,
+    "miou": 63.16126351252021,
+    "fwiou": 87.29303567847205,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch24.pth"
+  },
+  {
+    "epoch": 25,
+    "train_loss": 0.03579234384167519,
+    "val_loss": 0.2902421679455733,
+    "dice_score": 80.99209666422543,
+    "miou": 65.11150352976412,
+    "fwiou": 87.52211913968702,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch25.pth"
+  },
+  {
+    "epoch": 26,
+    "train_loss": 0.03551194679435198,
+    "val_loss": 0.278586372382183,
+    "dice_score": 81.53675952602764,
+    "miou": 65.42070229394106,
+    "fwiou": 87.60525522824878,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch26.pth"
+  },
+  {
+    "epoch": 27,
+    "train_loss": 0.0372672112258946,
+    "val_loss": 0.304584500744291,
+    "dice_score": 79.23874236068353,
+    "miou": 62.89428176597575,
+    "fwiou": 87.63101386273975,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch27.pth"
+  },
+  {
+    "epoch": 28,
+    "train_loss": 0.037361497049716315,
+    "val_loss": 0.27307925243740494,
+    "dice_score": 81.07238935455749,
+    "miou": 64.9499517110847,
+    "fwiou": 88.08954090732001,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch28.pth"
+  },
+  {
+    "epoch": 29,
+    "train_loss": 0.03519734660322491,
+    "val_loss": 0.3138017460325922,
+    "dice_score": 71.91983684377153,
+    "miou": 54.835843561693586,
+    "fwiou": 86.62440672034126,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch29.pth"
+  },
+  {
+    "epoch": 30,
+    "train_loss": 0.03546867361584687,
+    "val_loss": 0.31248673918130604,
+    "dice_score": 79.97763886471,
+    "miou": 63.37500803732544,
+    "fwiou": 87.2083181208159,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch30.pth"
+  },
+  {
+    "epoch": 31,
+    "train_loss": 0.03387040077973361,
+    "val_loss": 0.32449390571834386,
+    "dice_score": 81.95687521280688,
+    "miou": 65.35310801753515,
+    "fwiou": 87.59160994292554,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch31.pth"
+  },
+  {
+    "epoch": 32,
+    "train_loss": 0.05793776910998761,
+    "val_loss": 0.26497788489728735,
+    "dice_score": 82.94212538490018,
+    "miou": 66.91519325032587,
+    "fwiou": 87.91554676252476,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch32.pth"
+  },
+  {
+    "epoch": 33,
+    "train_loss": 0.02938058741271478,
+    "val_loss": 0.3091594955303531,
+    "dice_score": 74.58970976006428,
+    "miou": 57.18569889378088,
+    "fwiou": 86.52088400916264,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch33.pth"
+  },
+  {
+    "epoch": 34,
+    "train_loss": 0.027993128227066975,
+    "val_loss": 0.3328372587490341,
+    "dice_score": 75.39470496194565,
+    "miou": 65.12556406671149,
+    "fwiou": 87.80141722128222,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch34.pth"
+  },
+  {
+    "epoch": 35,
+    "train_loss": 0.02980425931725519,
+    "val_loss": 0.2970662664999996,
+    "dice_score": 82.02375727375565,
+    "miou": 65.87795282421344,
+    "fwiou": 88.09662306724462,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch35.pth"
+  },
+  {
+    "epoch": 36,
+    "train_loss": 0.029622376613557374,
+    "val_loss": 0.3462169333698525,
+    "dice_score": 76.72531108527478,
+    "miou": 59.56871807586798,
+    "fwiou": 86.79336104600752,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch36.pth"
+  },
+  {
+    "epoch": 37,
+    "train_loss": 0.030673322323882195,
+    "val_loss": 0.3175641443526399,
+    "dice_score": 78.54357239816052,
+    "miou": 61.95373029156846,
+    "fwiou": 87.79443387860155,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch37.pth"
+  },
+  {
+    "epoch": 38,
+    "train_loss": 0.02874629340965403,
+    "val_loss": 0.2690657325142968,
+    "dice_score": 76.12618221106814,
+    "miou": 64.5283566874407,
+    "fwiou": 88.29198901956318,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch38.pth"
+  },
+  {
+    "epoch": 39,
+    "train_loss": 0.028682804890104455,
+    "val_loss": 0.32898001842524693,
+    "dice_score": 74.38038140126702,
+    "miou": 62.68793916783074,
+    "fwiou": 87.76388731597001,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch39.pth"
+  },
+  {
+    "epoch": 40,
+    "train_loss": 0.027844142974481803,
+    "val_loss": 0.3409924707442954,
+    "dice_score": 80.34348177050038,
+    "miou": 68.99810102525436,
+    "fwiou": 88.06799426001767,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch40.pth"
+  },
+  {
+    "epoch": 41,
+    "train_loss": 0.037928464416704694,
+    "val_loss": 0.34306347200080106,
+    "dice_score": 81.00856574781295,
+    "miou": 69.9781255646469,
+    "fwiou": 88.17430569549228,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch41.pth"
+  },
+  {
+    "epoch": 42,
+    "train_loss": 0.02306508134490767,
+    "val_loss": 0.3238148325919241,
+    "dice_score": 80.85932263145054,
+    "miou": 69.89309923696693,
+    "fwiou": 88.34649692739653,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch42.pth"
+  },
+  {
+    "epoch": 43,
+    "train_loss": 0.024980894577855937,
+    "val_loss": 0.32605135718873446,
+    "dice_score": 82.4118906492508,
+    "miou": 71.62904320719417,
+    "fwiou": 88.27144714699934,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch43.pth"
+  },
+  {
+    "epoch": 44,
+    "train_loss": 0.025647633556136338,
+    "val_loss": 0.3243473004549742,
+    "dice_score": 77.7102457358334,
+    "miou": 65.81395200134257,
+    "fwiou": 87.9415810704684,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch44.pth"
+  },
+  {
+    "epoch": 45,
+    "train_loss": 0.03567207894391484,
+    "val_loss": 0.2959989757425543,
+    "dice_score": 82.00407273909839,
+    "miou": 71.02789273615426,
+    "fwiou": 88.5493698831208,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch45.pth"
+  },
+  {
+    "epoch": 46,
+    "train_loss": 0.02216984630069709,
+    "val_loss": 0.32082511314555356,
+    "dice_score": 80.55413181708646,
+    "miou": 68.88334408985365,
+    "fwiou": 88.2915321839843,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch46.pth"
+  },
+  {
+    "epoch": 47,
+    "train_loss": 0.023873540363705682,
+    "val_loss": 0.35862303708774457,
+    "dice_score": 81.18124460900076,
+    "miou": 69.40005287329187,
+    "fwiou": 87.90128790116965,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch47.pth"
+  },
+  {
+    "epoch": 48,
+    "train_loss": 0.024364175518343658,
+    "val_loss": 0.35176516721106094,
+    "dice_score": 82.5316086495774,
+    "miou": 71.41438301229489,
+    "fwiou": 88.49452423156589,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch48.pth"
+  },
+  {
+    "epoch": 49,
+    "train_loss": 0.02408869291927355,
+    "val_loss": 0.27502592685429944,
+    "dice_score": 79.18395736368463,
+    "miou": 67.10864373913724,
+    "fwiou": 87.99772665775227,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch49.pth"
+  },
+  {
+    "epoch": 50,
+    "train_loss": 0.023977689809168146,
+    "val_loss": 0.32579808080217976,
+    "dice_score": 81.84449132973319,
+    "miou": 70.76878571176593,
+    "fwiou": 87.7830500847406,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch50.pth"
+  },
+  {
+    "epoch": 51,
+    "train_loss": 0.02317154076547083,
+    "val_loss": 0.3289542112067558,
+    "dice_score": 80.99025364510656,
+    "miou": 69.79916620976218,
+    "fwiou": 88.34472203925928,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch51.pth"
+  },
+  {
+    "epoch": 52,
+    "train_loss": 0.0227306685775058,
+    "val_loss": 0.3410481041216332,
+    "dice_score": 82.44034698131516,
+    "miou": 72.05328610718595,
+    "fwiou": 88.53291498364534,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch52.pth"
+  },
+  {
+    "epoch": 53,
+    "train_loss": 0.02250640652689486,
+    "val_loss": 0.37262322556605376,
+    "dice_score": 80.82697356821384,
+    "miou": 68.97069854012588,
+    "fwiou": 87.9630618271111,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch53.pth"
+  },
+  {
+    "epoch": 54,
+    "train_loss": 0.022249766437296686,
+    "val_loss": 0.31842987852144067,
+    "dice_score": 76.30671983688731,
+    "miou": 63.961706563370036,
+    "fwiou": 88.05988442921776,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch54.pth"
+  },
+  {
+    "epoch": 55,
+    "train_loss": 0.02228316957229072,
+    "val_loss": 0.32814826743434306,
+    "dice_score": 78.24239198399478,
+    "miou": 66.6352712419146,
+    "fwiou": 88.32454510031688,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch55.pth"
+  },
+  {
+    "epoch": 56,
+    "train_loss": 0.021566150776536508,
+    "val_loss": 0.38087526954494527,
+    "dice_score": 79.78930512428268,
+    "miou": 67.7165891985742,
+    "fwiou": 87.82149820632173,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch56.pth"
+  },
+  {
+    "epoch": 57,
+    "train_loss": 0.02087551854199718,
+    "val_loss": 0.3780410291384096,
+    "dice_score": 81.85096087878982,
+    "miou": 70.5329014049828,
+    "fwiou": 88.0375931820582,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch57.pth"
+  },
+  {
+    "epoch": 58,
+    "train_loss": 0.02085712156371002,
+    "val_loss": 0.3484862669762494,
+    "dice_score": 83.04153665908154,
+    "miou": 72.15971285091202,
+    "fwiou": 88.8464000128302,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch58.pth"
+  },
+  {
+    "epoch": 59,
+    "train_loss": 0.03740649098568279,
+    "val_loss": 0.3215486139221036,
+    "dice_score": 82.3534987351583,
+    "miou": 71.81821133439865,
+    "fwiou": 88.56929018384662,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch59.pth"
+  },
+  {
+    "epoch": 60,
+    "train_loss": 0.018477876028640275,
+    "val_loss": 0.3231556911993286,
+    "dice_score": 80.87297903556004,
+    "miou": 69.38571877093955,
+    "fwiou": 88.67823873547732,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch60.pth"
+  },
+  {
+    "epoch": 61,
+    "train_loss": 0.0169903648976535,
+    "val_loss": 0.3618810699469801,
+    "dice_score": 84.0130420317869,
+    "miou": 73.31027410499236,
+    "fwiou": 88.56461859872688,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch61.pth"
+  },
+  {
+    "epoch": 62,
+    "train_loss": 0.01869755199721481,
+    "val_loss": 0.38559022221876227,
+    "dice_score": 83.50568703124708,
+    "miou": 73.42052693668224,
+    "fwiou": 88.75049137715165,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch62.pth"
+  },
+  {
+    "epoch": 63,
+    "train_loss": 0.019471715518279788,
+    "val_loss": 0.3965233652650014,
+    "dice_score": 82.84998792386263,
+    "miou": 71.88457263245976,
+    "fwiou": 88.35006953210022,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch63.pth"
+  },
+  {
+    "epoch": 64,
+    "train_loss": 0.019265860466765698,
+    "val_loss": 0.3143171009648105,
+    "dice_score": 80.35444054947594,
+    "miou": 68.43058049649953,
+    "fwiou": 88.28666211262994,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch64.pth"
+  },
+  {
+    "epoch": 65,
+    "train_loss": 0.01950281969226234,
+    "val_loss": 0.35136329301673436,
+    "dice_score": 82.9209691305452,
+    "miou": 71.79077207575665,
+    "fwiou": 88.51298974224548,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch65.pth"
+  },
+  {
+    "epoch": 66,
+    "train_loss": 0.018957746439418815,
+    "val_loss": 0.32725701167963556,
+    "dice_score": 81.07411923469746,
+    "miou": 69.24109973880405,
+    "fwiou": 88.2520991371456,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch66.pth"
+  },
+  {
+    "epoch": 67,
+    "train_loss": 0.0187536242211593,
+    "val_loss": 0.31838831073348073,
+    "dice_score": 80.89672864957387,
+    "miou": 69.59309631986514,
+    "fwiou": 88.65829945573802,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch67.pth"
+  },
+  {
+    "epoch": 68,
+    "train_loss": 0.01858977658150908,
+    "val_loss": 0.38704591311946296,
+    "dice_score": 82.59033698834374,
+    "miou": 71.50573018273363,
+    "fwiou": 88.331586235775,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch68.pth"
+  },
+  {
+    "epoch": 69,
+    "train_loss": 0.01848947162073122,
+    "val_loss": 0.3733638889979625,
+    "dice_score": 82.30440027994462,
+    "miou": 71.31924256944042,
+    "fwiou": 88.52195593425233,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch69.pth"
+  },
+  {
+    "epoch": 70,
+    "train_loss": 0.017908816622079375,
+    "val_loss": 0.3317627157152131,
+    "dice_score": 83.90174674058584,
+    "miou": 73.41004940046487,
+    "fwiou": 89.07254540853847,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch70.pth"
+  },
+  {
+    "epoch": 71,
+    "train_loss": 0.017786117638393804,
+    "val_loss": 0.3983666157970826,
+    "dice_score": 85.0736847337841,
+    "miou": 75.25674798161553,
+    "fwiou": 88.53625592117844,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch71.pth"
+  },
+  {
+    "epoch": 72,
+    "train_loss": 0.017655956615966067,
+    "val_loss": 0.3995331245865943,
+    "dice_score": 85.24498691282531,
+    "miou": 75.36861581602797,
+    "fwiou": 88.74097756055556,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch72.pth"
+  },
+  {
+    "epoch": 73,
+    "train_loss": 0.017507439696315477,
+    "val_loss": 0.3493015841729399,
+    "dice_score": 83.72641241362537,
+    "miou": 73.22898755149765,
+    "fwiou": 89.02867801812332,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch73.pth"
+  },
+  {
+    "epoch": 74,
+    "train_loss": 0.017598043357333486,
+    "val_loss": 0.40250457205094287,
+    "dice_score": 81.90700307780608,
+    "miou": 70.43925110513459,
+    "fwiou": 88.1276462457933,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch74.pth"
+  },
+  {
+    "epoch": 75,
+    "train_loss": 0.01667473118927239,
+    "val_loss": 0.3963385442460793,
+    "dice_score": 80.30297837164605,
+    "miou": 68.33631890412806,
+    "fwiou": 87.80847604856459,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch75.pth"
+  },
+  {
+    "epoch": 76,
+    "train_loss": 0.016821128494947386,
+    "val_loss": 0.3782220845637114,
+    "dice_score": 79.32564241408079,
+    "miou": 67.52388568149445,
+    "fwiou": 88.2212732518413,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch76.pth"
+  },
+  {
+    "epoch": 77,
+    "train_loss": 0.02705843881962145,
+    "val_loss": 0.37464685333163844,
+    "dice_score": 83.60611991718179,
+    "miou": 73.00286673883008,
+    "fwiou": 88.96900253134483,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch77.pth"
+  },
+  {
+    "epoch": 78,
+    "train_loss": 0.014320563564282105,
+    "val_loss": 0.3195653398237798,
+    "dice_score": 79.56710715032762,
+    "miou": 68.24473385162729,
+    "fwiou": 89.1207944953805,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch78.pth"
+  },
+  {
+    "epoch": 79,
+    "train_loss": 0.014241930802465018,
+    "val_loss": 0.3727420955032542,
+    "dice_score": 84.59027027130338,
+    "miou": 74.73805487624203,
+    "fwiou": 88.96956292658822,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch79.pth"
+  },
+  {
+    "epoch": 80,
+    "train_loss": 0.01568661877595969,
+    "val_loss": 0.34702019857755606,
+    "dice_score": 83.31843632220038,
+    "miou": 72.54186143741228,
+    "fwiou": 88.84368234173378,
+    "checkpoint": "D:\\MSC LAE\\sem2\\AAE5303 ROBUST CONTROL TECHNOLOGY IN LA AERIAL VEHICLE\\project\\AAE5303-ChatGPT_spokesperson-group-Project\\modules\\segmentation\\checkpoints\\checkpoint_epoch80.pth"
+  }
+]

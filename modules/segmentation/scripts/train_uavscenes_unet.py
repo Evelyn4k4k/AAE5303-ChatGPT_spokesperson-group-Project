@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import re
 from pathlib import Path
 
 import numpy as np
@@ -95,6 +96,12 @@ def main() -> int:
     p.add_argument("--config", type=Path, default=MODULE_ROOT / "configs" / "uavscenes_amtown02_interval5_14cls.yaml")
     p.add_argument("--save-dir", type=Path, default=MODULE_ROOT / "checkpoints")
     p.add_argument("--epochs", type=int, default=None, help="Override epochs in YAML (optional).")
+    p.add_argument(
+        "--resume",
+        type=str,
+        default=None,
+        help="Resume from checkpoint path, or use 'latest' for newest checkpoint in save-dir.",
+    )
     p.add_argument("--val-percent", type=float, default=None)
     p.add_argument("--seed", type=int, default=0)
     args = p.parse_args()
@@ -157,8 +164,54 @@ def main() -> int:
     metrics_log = []
     best_miou = -1.0
     best_path = None
+    start_epoch = 1
 
-    for epoch in range(1, epochs + 1):
+    def _epoch_from_name(pth: Path) -> int:
+        m = re.search(r"checkpoint_epoch(\d+)\.pth$", pth.name)
+        return int(m.group(1)) if m else 0
+
+    # Optional resume
+    resume_target: Path | None = None
+    if args.resume:
+        if args.resume.strip().lower() == "latest":
+            cands = sorted(args.save_dir.glob("checkpoint_epoch*.pth"), key=_epoch_from_name)
+            if cands:
+                resume_target = cands[-1]
+        else:
+            resume_target = Path(args.resume)
+
+    if resume_target:
+        if not resume_target.is_file():
+            logging.error("Resume checkpoint not found: %s", resume_target)
+            return 1
+        state = torch.load(resume_target, map_location=device)
+        if isinstance(state, dict) and "mask_values" in state:
+            # vendor-style checkpoint
+            state.pop("mask_values", None)
+        model.load_state_dict(state, strict=False)
+        last_epoch = _epoch_from_name(resume_target)
+        start_epoch = max(1, last_epoch + 1)
+        logging.info("Resumed model weights from %s (next epoch: %d)", resume_target, start_epoch)
+
+    # If previous log exists, keep history so curves include resumed epochs.
+    out_json = MODULE_ROOT / "results" / "uavscenes_training_log.json"
+    if out_json.is_file():
+        try:
+            old_rows = json.loads(out_json.read_text(encoding="utf-8"))
+            if isinstance(old_rows, list):
+                metrics_log.extend(old_rows)
+                if old_rows:
+                    best_row = max(old_rows, key=lambda r: float(r.get("miou", -1.0)))
+                    best_miou = float(best_row.get("miou", -1.0))
+                    best_path = Path(str(best_row.get("checkpoint", ""))) if best_row.get("checkpoint") else None
+        except Exception:
+            pass
+
+    if start_epoch > epochs:
+        logging.info("Nothing to run: start_epoch=%d > epochs=%d", start_epoch, epochs)
+        return 0
+
+    for epoch in range(start_epoch, epochs + 1):
         model.train()
         running = 0.0
         n_batches = 0
@@ -204,7 +257,6 @@ def main() -> int:
             best_miou = float(val_metrics["miou"])
             best_path = ckpt_path
 
-    out_json = MODULE_ROOT / "results" / "uavscenes_training_log.json"
     out_json.parent.mkdir(parents=True, exist_ok=True)
     out_json.write_text(json.dumps(metrics_log, indent=2) + "\n", encoding="utf-8")
     logging.info("Wrote training log: %s", out_json)
