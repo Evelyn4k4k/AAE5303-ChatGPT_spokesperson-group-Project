@@ -1,0 +1,100 @@
+{
+  "project_name": "AAE5303-ChatGPT_spokesperson-group-Project",
+  "project_private_repo_url": "https://github.com/wymmust/AAE5303-ChatGPT_spokesperson-group-Project.git",
+  "module": "3d_reconstruction",
+  "sequence": "AMtown02",
+  "method": "OpenSplat with COLMAP-format input",
+  "owner": "wymmust",
+  "team_members": {
+    "visual_odometry": "Evelyn4k4k",
+    "reconstruction": "wymmust",
+    "semantic_segmentation": "taiwanhaitong"
+  },
+  "selected_result": {
+    "scene_file": "results/amtown02_vo_amtown02_aggressive_hq2_35000/scene_aggressive_hq2_n35000_d2_sh3.ply",
+    "input_source": "colmap_from_vo_amtown02",
+    "opensplat_profile": "aggressive_hq2",
+    "iterations": 35000,
+    "camera_poses": 622,
+    "vertices": 1899228,
+    "size_mb": 449.19,
+    "key_opensplat_flags": "-d 2 --num-downscales 1 --resolution-schedule 1000 --sh-degree 3 --sh-degree-interval 750 --refine-every 50 --warmup-length 300 --densify-grad-thresh 0.00015 -s 5000"
+  },
+  "comparison_results": [
+    {
+      "label": "V0_conservative_smoke",
+      "scene_file": "results/amtown02_vo_amtown02_safe/scene_gpu_safe_n500_d3.ply",
+      "opensplat_profile": "conservative",
+      "iterations": 500,
+      "camera_poses": 622,
+      "vertices": 50000,
+      "size_mb": 4.96
+    },
+    {
+      "label": "V1_conservative",
+      "scene_file": "results/amtown02_vo_amtown02_10000/scene_gpu_safe_n10000_d3.ply",
+      "opensplat_profile": "conservative",
+      "iterations": 10000,
+      "camera_poses": 622,
+      "vertices": 1296361,
+      "size_mb": 128.58
+    },
+    {
+      "label": "V2_conservative",
+      "scene_file": "results/amtown02_vo_amtown02_20000/scene_gpu_safe_n20000_d3.ply",
+      "opensplat_profile": "conservative",
+      "iterations": 20000,
+      "camera_poses": 622,
+      "vertices": 1338941,
+      "size_mb": 132.8
+    },
+    {
+      "label": "V3_conservative",
+      "scene_file": "results/amtown02_vo_amtown02_30000/scene_gpu_safe_n30000_d3.ply",
+      "opensplat_profile": "conservative",
+      "iterations": 30000,
+      "camera_poses": 622,
+      "vertices": 1922747,
+      "size_mb": 190.7
+    },
+    {
+      "label": "V4_conservative",
+      "scene_file": "results/amtown02_vo_amtown02_35000/scene_gpu_safe_n35000_d3.ply",
+      "opensplat_profile": "conservative",
+      "iterations": 35000,
+      "camera_poses": 622,
+      "vertices": 1949324,
+      "size_mb": 193.34
+    },
+    {
+      "label": "V5_conservative_longest",
+      "scene_file": "results/amtown02_vo_amtown02_40000/scene_gpu_safe_n40000_d3.ply",
+      "opensplat_profile": "conservative",
+      "iterations": 40000,
+      "camera_poses": 622,
+      "vertices": 1807727,
+      "size_mb": 179.29
+    },
+    {
+      "label": "V6_aggressive_hq2_selected",
+      "scene_file": "results/amtown02_vo_amtown02_aggressive_hq2_35000/scene_aggressive_hq2_n35000_d2_sh3.ply",
+      "opensplat_profile": "aggressive_hq2",
+      "iterations": 35000,
+      "camera_poses": 622,
+      "vertices": 1899228,
+      "size_mb": 449.19
+    },
+    {
+      "label": "V7_extended_colmap_input_hq2",
+      "scene_file": "results/amtown02_colmap_baseline_hq2_35000/scene_colmap_baseline_hq2_n35000_d2_sh3.ply",
+      "input_source": "colmap_from_amtown02",
+      "opensplat_profile": "aggressive_hq2",
+      "experiment_note": "Plan B / 方案 B: same aggressive HQ2 OpenSplat flags as V6 (次激进); COLMAP input is colmap_from_amtown02 (292 registered views, same image pool subset). COLMAP structured baseline for quality-ceiling comparison vs VO graph. Checkpoints every 5000 steps in results/amtown02_colmap_baseline_hq2_35000/. If your V7 uses >622 registered views, update paths and counts.",
+      "iterations": 35000,
+      "camera_poses": 292,
+      "vertices": 2663956,
+      "size_mb": 630.06
+    }
+  ],
+  "notes": "Final GitHub-facing VO reconstruction is V6: aggressive HQ2 at 35000 iterations on colmap_from_vo_amtown02 (622 images.bin cameras). V0-V5 share that same VO COLMAP input; only conservative OpenSplat hyperparameters differ. V7 reuses the aggressive HQ2 flag block but swaps to colmap_from_amtown02 (changed-input experiment; 292 registered cameras in this repo snapshot—replace with your expanded COLMAP if you registered more views). FAQ: PNG count on disk vs images.bin is unrelated to V6 vs V7 distinction. A -d 1 aggressive trial was killed during preload on WSL, so -d 2 is documented."
+}

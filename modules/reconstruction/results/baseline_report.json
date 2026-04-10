@@ -1,0 +1,78 @@
+{
+  "selected_colmap_project": "baseline/colmap_from_vo_amtown02",
+  "selected_frames_used": 622,
+  "selected_sparse_points": 50000,
+  "selected_scene": "results/amtown02_vo_amtown02_aggressive_hq2_35000/scene_aggressive_hq2_n35000_d2_sh3.ply",
+  "selected_iteration": 35000,
+  "selected_vertices": 1899228,
+  "selected_opensplat_profile": "aggressive_hq2",
+  "selected_opensplat_flags": "-d 2 --num-downscales 1 --resolution-schedule 1000 --sh-degree 3 --sh-degree-interval 750 --refine-every 50 --warmup-length 300 --densify-grad-thresh 0.00015 -s 5000",
+  "vo_colmap_project": "baseline/colmap_from_vo_amtown02",
+  "vo_frames_used": 622,
+  "vo_sparse_points": 50000,
+  "vo_conservative_reference_scene": "results/amtown02_vo_amtown02_35000/scene_gpu_safe_n35000_d3.ply",
+  "vo_conservative_reference_iteration": 35000,
+  "vo_conservative_reference_vertices": 1949324,
+  "vo_generated_scene": "results/amtown02_vo_amtown02_40000/scene_gpu_safe_n40000_d3.ply",
+  "vo_generated_iteration": 40000,
+  "vo_generated_vertices": 1807727,
+  "colmap_baseline_project": "baseline/colmap_from_amtown02",
+  "colmap_baseline_frames_used": 292,
+  "colmap_baseline_sparse_points": 35679,
+  "colmap_baseline_hq2_scene": "results/amtown02_colmap_baseline_hq2_35000/scene_colmap_baseline_hq2_n35000_d2_sh3.ply",
+  "colmap_baseline_hq2_vertices": 2663956,
+  "v7_label": "V7_extended_colmap_input_hq2",
+  "v7_input_source": "colmap_from_amtown02",
+  "v7_opensplat_profile": "aggressive_hq2",
+  "v7_scene": "results/amtown02_colmap_baseline_hq2_35000/scene_colmap_baseline_hq2_n35000_d2_sh3.ply",
+  "v7_frames_used": 292,
+  "v7_sparse_points": 35679,
+  "v7_vertices": 2663956,
+  "disk_png_count_amtown02_images_folder": 7499,
+  "iteration_comparison": [
+    {
+      "label": "conservative_10000",
+      "scene": "results/amtown02_vo_amtown02_10000/scene_gpu_safe_n10000_d3.ply",
+      "iteration": 10000,
+      "vertices": 1296361
+    },
+    {
+      "label": "conservative_20000",
+      "scene": "results/amtown02_vo_amtown02_20000/scene_gpu_safe_n20000_d3.ply",
+      "iteration": 20000,
+      "vertices": 1338941
+    },
+    {
+      "label": "conservative_30000",
+      "scene": "results/amtown02_vo_amtown02_30000/scene_gpu_safe_n30000_d3.ply",
+      "iteration": 30000,
+      "vertices": 1922747
+    },
+    {
+      "label": "conservative_35000",
+      "scene": "results/amtown02_vo_amtown02_35000/scene_gpu_safe_n35000_d3.ply",
+      "iteration": 35000,
+      "vertices": 1949324
+    },
+    {
+      "label": "conservative_40000",
+      "scene": "results/amtown02_vo_amtown02_40000/scene_gpu_safe_n40000_d3.ply",
+      "iteration": 40000,
+      "vertices": 1807727
+    },
+    {
+      "label": "aggressive_hq2_35000",
+      "scene": "results/amtown02_vo_amtown02_aggressive_hq2_35000/scene_aggressive_hq2_n35000_d2_sh3.ply",
+      "iteration": 35000,
+      "vertices": 1899228
+    },
+    {
+      "label": "V7_extended_colmap_input_hq2_35000",
+      "scene": "results/amtown02_colmap_baseline_hq2_35000/scene_colmap_baseline_hq2_n35000_d2_sh3.ply",
+      "iteration": 35000,
+      "vertices": 2663956
+    }
+  ],
+  "opensplat_status": "ready",
+  "notes": "Paths are relative to modules/reconstruction/ (clone root: modules/reconstruction/<path>). V6 selected: aggressive HQ2 on colmap_from_vo_amtown02 (622 cameras, 50000 sparse points). V0-V5 share that VO COLMAP input with conservative flags. V7 (v7_* fields): same aggressive HQ2 recipe on colmap_from_amtown02—changed COLMAP input (292 cameras, 35679 sparse points in this snapshot); update v7_* if you commit an expanded images.bin with more registered views. FAQ: disk PNG count vs images.bin registration is separate from V6 vs V7."
+}
